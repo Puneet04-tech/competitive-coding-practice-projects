@@ -1,8 +1,26 @@
 import java.util.Random;
 class pr_1{
+   
     public static void main(String[] args) {
-        Random rand = new Random();int count=0; int coins=0;
-        System.out.println("Roll the dice 2 times in one turn and each turn will cost 4$");
+        while (true) {
+            System.out.println("Welcome to the Dice Game!");
+            System.out.println("1. Start the game");
+            System.out.println("2. Exit");
+            System.out.print("Enter your choice: ");
+            java.util.Scanner scanner = new java.util.Scanner(System.in);
+            int choice = scanner.nextInt();
+            if (choice == 1) {
+                playGame();
+            } else if (choice == 2) {
+                System.out.println("Thank you for playing! Goodbye!");
+                break;
+            } else {
+                System.out.println("Invalid choice. Please try again.");
+            }}
+        }
+        public static void playGame() {
+        Random rand = new Random();int count=0; int coins=50;
+        System.out.println("Roll the dice 2 times in one turn and each turn will cost 5$");
         System.out.println("you have to match the number of dice 1 and dice 2 to win the game");
         System.out.println("There will be wining coins in $  ,like how close you are to match the numbers of dice 1 and dice 2, you will get coins in $");
         while (true) { 
@@ -11,6 +29,7 @@ class pr_1{
         System.out.println("Dice 1: " + dice1);
         System.out.println("Dice 2: " + dice2);
         count++;
+        coins -= 5; // Deduct cost for each turn
 if(Math.abs(dice1-dice2)==1){
     
             System.out.println("You are very close to match the numbers of dice 1 and dice 2, you will get 3$");
@@ -32,16 +51,14 @@ coins+=0.5;
             System.out.println("You are extremely far from match the numbers of dice 1 and dice 2, you will get 0.10$");
 coins+=0.10;
         }
-        else{
-            System.out.println("You are not close to match the numbers of dice 1 and dice 2, you will get nothing");
-        }
+       
         if (dice1 == dice2) {
             System.out.println("Congratulations! You matched the numbers and won the game!");
-            System.out.println("Total turns taken: " + count + " and total cost: $" + 3 * count);
-            System.out.println("Total coins earned: $" + (10 + coins));
+            System.out.println("Total turns taken: " + count + " and total cost: $" + 5 * count);
+            System.out.println("Total coins in hand: $" + (10 + coins));
             break;
         } 
         
-
+    
     }
 }}
