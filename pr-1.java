@@ -56,7 +56,7 @@ coins+=0.10;
         if (dice1 == dice2) {
             System.out.println("Congratulations! You matched the numbers and won the game!");
             System.out.println("Total turns taken: " + count + " and total cost: $" + 5 * count);
-            System.out.println("Total coins in hand: $" + (10 + coins));
+            System.out.println("Total coins in hand: $" + (10 * coins));
             break;
         } 
         
