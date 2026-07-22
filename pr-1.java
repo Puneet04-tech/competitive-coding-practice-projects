@@ -31,6 +31,10 @@ class pr_1{
         System.out.println("Dice 2: " + dice2);
         count++;
         coins -= 5; // Deduct cost for each turn
+        if (coins < 0) {
+            System.out.println("You have run out of coins. Game over! you have to pay +$" + Math.abs(coins) + " to continue playing");
+            break;
+        }   
 if(Math.abs(dice1-dice2)==1){
     
             System.out.println("You are very close to match the numbers of dice 1 and dice 2, you will get 3$");
